@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deathzkind</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#15121b; --panel:#201b2b; --line:#3a3150; --text:#ece6d9; --muted:#a79fb8;
+  --ember:#ff7a1a; --ember-ink:#1a0d00; --shadow:#000;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){--bg:#f3eee4;--panel:#fffaf0;--line:#cfc4ad;--text:#1d1828;--muted:#5d5670;--shadow:#1d1828}
+}
+:root[data-theme="light"]{--bg:#f3eee4;--panel:#fffaf0;--line:#cfc4ad;--text:#1d1828;--muted:#5d5670;--shadow:#1d1828}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;line-height:1.6;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:48px 48px;background-position:-1px -1px}
+body::before{content:"";position:fixed;inset:0;background:var(--bg);opacity:.93;z-index:-1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ember);outline-offset:3px}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px clamp(16px,5vw,56px)}
+.logo{font-family:"Pixelify Sans",monospace;font-weight:700;font-size:1.5rem;text-decoration:none;letter-spacing:.02em}
+.nav{display:flex;gap:12px;flex-wrap:wrap}
+
+.btn{display:inline-block;font-family:"Pixelify Sans",monospace;font-weight:700;font-size:1.1rem;text-decoration:none;
+  padding:10px 20px;border:3px solid var(--shadow);background:var(--panel);color:var(--text);
+  box-shadow:5px 5px 0 var(--shadow);transition:transform .08s,box-shadow .08s}
+.btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--shadow)}
+.btn:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--shadow)}
+.btn.primary{background:var(--ember);color:var(--ember-ink)}
+
+.hero{min-height:82vh;display:flex;flex-direction:column;justify-content:center;padding:40px clamp(16px,5vw,56px) 80px;max-width:1100px;margin:0 auto}
+.hero h1{font-family:"Pixelify Sans",monospace;font-weight:700;font-size:clamp(3.2rem,13vw,9rem);line-height:.95;margin:0 0 24px;letter-spacing:-.01em;
+  text-shadow:6px 6px 0 var(--shadow)}
+.hero p{font-size:1.2rem;max-width:34ch;color:var(--muted);margin:0 0 32px}
+.hint{font-family:"Pixelify Sans",monospace;color:var(--muted);margin-top:56px}
+
+section.clients{padding:80px clamp(16px,5vw,56px) 96px}
+.card{max-width:760px;margin:0 auto;background:var(--panel);border:3px solid var(--shadow);box-shadow:10px 10px 0 var(--shadow);padding:clamp(24px,5vw,48px)}
+.card.socials,.card.middle,.card.rat,.card.first{margin-top:48px}
+.card.install{padding-top:20px;padding-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.card.install h2{margin:0;font-size:clamp(1.5rem,5vw,2.2rem)}
+.row{display:flex;gap:16px;flex-wrap:wrap}
+.card h2{font-family:"Pixelify Sans",monospace;font-size:clamp(1.9rem,6vw,3rem);line-height:1.05;margin:0 0 16px}
+.version{display:inline-block;background:var(--ember);color:var(--ember-ink);font-family:"Pixelify Sans",monospace;font-weight:700;padding:2px 12px;margin-bottom:20px;border:3px solid var(--shadow)}
+.card p{color:var(--muted);margin:0 0 20px;max-width:52ch}
+.card p.includes{color:var(--text);font-weight:700;margin-bottom:28px}
+
+footer{text-align:center;padding:32px 16px 48px;color:var(--muted);font-size:.95rem}
+footer a{color:var(--text)}
+
+.corner{padding:0 clamp(16px,5vw,56px) 20px;font-size:.8rem;color:var(--muted);text-align:left}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#top">Deathzkind</a>
+  <nav class="nav" aria-label="Main menu">
+    <a class="btn primary" href="https://buymeacoffee.com/deathzkind" target="_blank" rel="noopener noreferrer">Donate</a>
+    <a class="btn" href="https://github.com/getlost221267" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <h1>Deathzkind</h1>
+    <p>Free clients for Minecraft. Scroll down to download.</p>
+    <div class="row"><a class="btn" href="#clients">Go to the clients</a><a class="btn" href="#corz">Go to Corz Client</a></div>
+    <div class="hint" aria-hidden="true">&darr; scroll</div>
+  </div>
+
+  <section class="clients" id="clients">
+    <div class="card install">
+      <h2>How to install</h2>
+      <a class="btn primary" href="https://youtu.be/5Z8ztXzjH88" target="_blank" rel="noopener noreferrer">Watch the tutorial</a>
+    </div>
+    <div class="card first">
+      <span class="version">Version 1.21.11</span>
+      <h2>Cracked clients for free</h2>
+      <p>All clients for version 1.21.11 are on my GitHub. Click the button to go straight to the download.</p>
+      <p class="includes">Includes GoobaClient, KryptonClient, AmethystClient and 67Client, all for free.</p>
+      <a class="btn primary" href="https://github.com/getlost221267/cracked-clients" target="_blank" rel="noopener noreferrer">Download on GitHub</a>
+    </div>
+    <div class="card middle" id="corz">
+      <span class="version">Version 1.21.11</span>
+      <h2>Corz Client</h2>
+      <p>All new client for free.</p>
+      <a class="btn primary" href="https://drive.google.com/file/d/1QjGFeCypfRQLshuWKO0eglybQ6uTh0PM/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Download now</a>
+    </div>
+    <div class="card rat">
+      <h2>Rat Checkers</h2>
+      <p>Check files for rats before you run them.</p>
+      <a class="btn primary" href="https://ratscanner.org/" target="_blank" rel="noopener noreferrer">Open Rat Scanner</a>
+    </div>
+    <div class="card socials">
+      <h2>Socials</h2>
+      <p>Follow me to see what I'm up to.</p>
+      <div class="row">
+        <a class="btn primary" href="https://www.tiktok.com/@getlost221267" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a class="btn primary" href="https://discord.com/users/1200878903502323794" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a class="btn primary" href="https://github.com/getlost221267" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Enjoying it? <a href="https://buymeacoffee.com/deathzkind" target="_blank" rel="noopener noreferrer">Donate</a> to support me.
+</footer>
+<div class="corner">I do not make these files, I am a republisher.</div>
+</body>
+</html>
